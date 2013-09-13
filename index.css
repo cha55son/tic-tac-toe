@@ -1,0 +1,17 @@
+.board {
+    height: 400px;
+    width: 400px;
+    margin: 50px auto;
+}
+
+.box {
+    height: 33%;
+    width: 33%;
+    background-color: #333;
+    float: left;
+    outline: 1px solid black;
+    text-align: center;
+    line-height: 132px;
+    font-size: 120px;
+    color: #EEE;
+}
