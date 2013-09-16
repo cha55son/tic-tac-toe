@@ -55,7 +55,7 @@ $(document).ready(function() {
                }
             }
             // randomly choose a position.
-            var pos = Math.floor(Math.random() * (emptyBoxes.length - 1));
+            var pos = Math.floor(Math.random() * (emptyBoxes.length));
             game.humanMove(emptyBoxes[pos][0], emptyBoxes[pos][1]);
             setTimeout(randomTest, 50);
         };
