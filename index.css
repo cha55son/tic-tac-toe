@@ -1,3 +1,8 @@
+.title {
+    height: 184px;
+    line-height: 70px;
+}
+
 .board {
     height: 400px;
     width: 400px;
@@ -11,7 +16,11 @@
     float: left;
     outline: 1px solid black;
     text-align: center;
-    line-height: 132px;
+    line-height: 110px;
     font-size: 120px;
     color: #EEE;
+}
+
+.modal {
+    display: none;
 }
