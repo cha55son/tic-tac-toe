@@ -12,15 +12,20 @@ $(document).ready(function() {
     }).on('game.take', function(e, obj) {
         $boxes.filter('.box[data-row="' + obj.row + '"][data-col="' + obj.col + '"]').html(obj.text);
     }).on('game.gameover', function(e, obj) {
-        $('.modal-body').html([
-            (function() {
-                switch (obj.winner) {
-                    case 'human': return "Human Wins!"; break;
-                    case 'computer': return "Computer Wins!"; break;
-                    case 'draw': return "Draw!"; break;
-                }
-            })()
-        ].join());
+        $('.modal-title').html((function() {
+            switch (obj.winner) {
+                case 'human': return "You win!"; break;
+                case 'computer': return "Computer wins!"; break;
+                case 'draw': return "Its a draw!"; break;
+            }
+        })());
+        $('.modal-subtext').html((function() {
+            switch (obj.winner) {
+                case 'human': return "Looks like i've failed in thwarting your superior intelligence."; break;
+                case 'computer': return "This is to be expected right?"; break;
+                case 'draw': return "Let's try this again.."; break;
+            }
+        })());
         $('.modal').modal();
     });
 
