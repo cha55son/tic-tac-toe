@@ -19,6 +19,9 @@
     line-height: 110px;
     font-size: 120px;
     color: #EEE;
+} .box:hover {
+    background-color: #555;
+    cursor: pointer;
 }
 
 .modal {
