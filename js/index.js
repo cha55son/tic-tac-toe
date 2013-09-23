@@ -33,8 +33,15 @@ $(document).ready(function() {
     // to see if there are any senarios where the computer
     // loses.
     $(document).keypress(function(e) {
+        $boxes.off('click');
         if (e.which != 13) return;
         var game = new TicTacToe();
+        var passedTests = 0;
+        var failedTests = 0;
+        // Cache jQuery objects.
+        var $alert = $('.random-alert');
+        var $passedAlert = $('.passed-tests');
+        var $failedAlert = $('.failed-tests');
 
         $(document).off('game.gameover').on('game.gameover', function(e, obj) {
             $('.box').html('');
@@ -42,7 +49,13 @@ $(document).ready(function() {
                 console.log(game.board.toString());
                 console.log("Human won the scenario above.");
                 console.log('**************************************');
+                failedTests += 1;
+                $failedAlert.text(failedTests);
+            } else {
+                passedTests += 1;
+                $passedAlert.text(passedTests);
             }
+            $alert.removeClass('hide');
             game = new TicTacToe();
         });
         var randomTest = function() {

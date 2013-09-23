@@ -4,14 +4,20 @@
 }
 
 .board {
-    height: 400px;
     width: 400px;
     margin: 50px auto;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
 }
 
 .box {
-    height: 33%;
-    width: 33%;
+    height: 132px;
+    width: 132px;
     background-color: #333;
     float: left;
     outline: 1px solid black;
@@ -26,4 +32,9 @@
 
 .modal {
     display: none;
+}
+
+.score {
+    font-size: 35px;
+    font-weight: bold;
 }
